@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
 @property(nonatomic, retain) UIColor *barTintColor;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
 

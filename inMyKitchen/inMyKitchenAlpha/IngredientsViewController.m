@@ -96,7 +96,6 @@
     [[alert textFieldAtIndex:0] resignFirstResponder];**/
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ingrédient" message:@"Ajout" delegate:self cancelButtonTitle:@"Annuler" otherButtonTitles:@"OK", nil];
     [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
-    [alert setTag:2];
     [alert show];
     
 }

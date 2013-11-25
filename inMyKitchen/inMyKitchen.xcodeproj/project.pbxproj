@@ -21,7 +21,7 @@
 		0AB6B8F21841765100AE592D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB6B8D11841765100AE592D /* Foundation.framework */; };
 		0AB6B8F31841765100AE592D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB6B8D51841765100AE592D /* UIKit.framework */; };
 		0AB6B8FB1841765100AE592D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AB6B8F91841765100AE592D /* InfoPlist.strings */; };
-		0AB6B8FD1841765100AE592D /* inMyKitchenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6B8FC1841765100AE592D /* inMyKitchenTests.m */; };
+		0AB6B8FD1841765100AE592D /* inMyKitchenAlphaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6B8FC1841765100AE592D /* inMyKitchenAlphaTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,7 @@
 		0AB6B8D91841765100AE592D /* inMyKitchen-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "inMyKitchen-Info.plist"; sourceTree = "<group>"; };
 		0AB6B8DB1841765100AE592D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0AB6B8DD1841765100AE592D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0AB6B8DF1841765100AE592D /* inMyKitchen-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "inMyKitchen-Prefix.pch"; sourceTree = "<group>"; };
+		0AB6B8DF1841765100AE592D /* inMyKitchenAlpha-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "inMyKitchenAlpha-Prefix.pch"; sourceTree = "<group>"; };
 		0AB6B8E01841765100AE592D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0AB6B8E11841765100AE592D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0AB6B8E41841765100AE592D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		0AB6B8F01841765100AE592D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0AB6B8F81841765100AE592D /* inMyKitchenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "inMyKitchenTests-Info.plist"; sourceTree = "<group>"; };
 		0AB6B8FA1841765100AE592D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0AB6B8FC1841765100AE592D /* inMyKitchenTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inMyKitchenTests.m; sourceTree = "<group>"; };
+		0AB6B8FC1841765100AE592D /* inMyKitchenAlphaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inMyKitchenAlphaTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,8 @@
 				0AB6B8E91841765100AE592D /* Images.xcassets */,
 				0AB6B8D81841765100AE592D /* Supporting Files */,
 			);
-			path = inMyKitchen;
+			name = inMyKitchen;
+			path = inMyKitchenAlpha;
 			sourceTree = "<group>";
 		};
 		0AB6B8D81841765100AE592D /* Supporting Files */ = {
@@ -134,7 +135,7 @@
 				0AB6B8D91841765100AE592D /* inMyKitchen-Info.plist */,
 				0AB6B8DA1841765100AE592D /* InfoPlist.strings */,
 				0AB6B8DD1841765100AE592D /* main.m */,
-				0AB6B8DF1841765100AE592D /* inMyKitchen-Prefix.pch */,
+				0AB6B8DF1841765100AE592D /* inMyKitchenAlpha-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -142,10 +143,11 @@
 		0AB6B8F61841765100AE592D /* inMyKitchenTests */ = {
 			isa = PBXGroup;
 			children = (
-				0AB6B8FC1841765100AE592D /* inMyKitchenTests.m */,
+				0AB6B8FC1841765100AE592D /* inMyKitchenAlphaTests.m */,
 				0AB6B8F71841765100AE592D /* Supporting Files */,
 			);
-			path = inMyKitchenTests;
+			name = inMyKitchenTests;
+			path = inMyKitchenAlphaTests;
 			sourceTree = "<group>";
 		};
 		0AB6B8F71841765100AE592D /* Supporting Files */ = {
@@ -265,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AB6B8FD1841765100AE592D /* inMyKitchenTests.m in Sources */,
+				0AB6B8FD1841765100AE592D /* inMyKitchenAlphaTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
