@@ -12,7 +12,8 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UITextField *textField;
-- (IBAction)add:(id)sender;
 @property (strong, nonatomic) NSString *test;
+- (IBAction)add:(id)sender;
+- (IBAction)remove:(id)sender;
 
 @end

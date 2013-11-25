@@ -22,6 +22,7 @@
 		0AB6B8F31841765100AE592D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB6B8D51841765100AE592D /* UIKit.framework */; };
 		0AB6B8FB1841765100AE592D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AB6B8F91841765100AE592D /* InfoPlist.strings */; };
 		0AB6B8FD1841765100AE592D /* inMyKitchenAlphaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6B8FC1841765100AE592D /* inMyKitchenAlphaTests.m */; };
+		0ADD95AF1843F72D00270E89 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADD95AE1843F72D00270E89 /* trash.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		0AB6B8F81841765100AE592D /* inMyKitchenTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "inMyKitchenTests-Info.plist"; sourceTree = "<group>"; };
 		0AB6B8FA1841765100AE592D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0AB6B8FC1841765100AE592D /* inMyKitchenAlphaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inMyKitchenAlphaTests.m; sourceTree = "<group>"; };
+		0ADD95AE1843F72D00270E89 /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		0AB6B8C51841765000AE592D = {
 			isa = PBXGroup;
 			children = (
+				0ADD95AD1843F72D00270E89 /* Images */,
 				0AB6B8D71841765100AE592D /* inMyKitchen */,
 				0AB6B8F61841765100AE592D /* inMyKitchenTests */,
 				0AB6B8D01841765100AE592D /* Frameworks */,
@@ -157,6 +160,15 @@
 				0AB6B8F91841765100AE592D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0ADD95AD1843F72D00270E89 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0ADD95AE1843F72D00270E89 /* trash.png */,
+			);
+			name = Images;
+			path = inMyKitchenAlpha/Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +250,7 @@
 				0AB6B8EA1841765100AE592D /* Images.xcassets in Resources */,
 				0AB6B8DC1841765100AE592D /* InfoPlist.strings in Resources */,
 				0AB6B8E51841765100AE592D /* Main.storyboard in Resources */,
+				0ADD95AF1843F72D00270E89 /* trash.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

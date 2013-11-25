@@ -20,7 +20,43 @@
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     self.test = [[alertView textFieldAtIndex:0] text];
-    NSLog(@"%@",self.test);
+    if([self.test length]!= 0){
+        [self writeATEndOfFile:self.test];
+        [self writeATEndOfFile:@";"];
+        [self viewDidLoad];
+        NSLog(@"Ingrédient ajouté");
+    }else{
+        [self viewDidLoad];
+        NSLog(@"Annulé");
+    }
+    
+}
+
+-(void)clearFile{
+     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+     NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents directory
+     NSError *error;
+     BOOL succeed = [@"" writeToFile:[documentsDirectory stringByAppendingPathComponent:@"ingredientsList.txt"] atomically:YES encoding:NSUTF8StringEncoding error:&error];
+     if (!succeed){
+         NSLog(@"Erreur");
+     }else{
+         NSLog(@"Fichié vidé");
+     }
+}
+
+-(void)writeATEndOfFile:(NSString *)appendedStr{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *fileName = [NSString stringWithFormat:@"%@/ingredientsList.txt", documentsDirectory];
+    NSString *writedStr = [[NSString alloc]initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
+    writedStr = [writedStr stringByAppendingFormat:appendedStr];
+    
+    if([[NSFileManager defaultManager] fileExistsAtPath:fileName])
+    {
+        [[NSFileManager defaultManager] removeItemAtPath:fileName error:nil];
+    }
+    //save content to the documents directory
+    [writedStr writeToFile:fileName atomically:YES encoding:NSStringEncodingConversionAllowLossy error:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,7 +72,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    ingredients = [[NSArray alloc] initWithObjects: @"Farine", @"Sucre", @"Lait", @"Chocolat", nil];
+    //ingredients = [[NSArray alloc] initWithObjects: @"Farine", @"Sucre", @"Lait", @"Chocolat", nil];
+    NSString *fileContents = [NSString stringWithContentsOfFile:@"%@/ingredientsList.txt"];
+    NSArray *lines = [fileContents componentsSeparatedByString:@";"];
+    NSInteger len = [lines count];
+    NSLog(@"%@",lines);
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,22 +118,6 @@
 }
 
 - (IBAction)add:(id)sender {
-    /**UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert" message:@" " delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
-	CGRect frame = CGRectMake(14, 45, 255, 23);
-	self.textField = [[UITextField alloc] initWithFrame:frame];
-	self.textField.placeholder = @"Name";
-	self.textField.backgroundColor = [UIColor blackColor];
-	self.textField.autocorrectionType = UITextAutocorrectionTypeDefault;
-	self.textField.keyboardType = UIKeyboardTypeAlphabet;
-	self.textField.returnKeyType = UIReturnKeyDone;
-	self.textField.clearButtonMode = UITextFieldViewModeWhileEditing; // has 'x' button to the right
-	[alertView addSubview:self.textField];
-	[alertView show];
-     ---
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ingrédient" message:@"Nouvel ingrédient" delegate:nil cancelButtonTitle:@"Annuler" otherButtonTitles:@"Ajouter", nil];
-    [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
-    [alert show];
-    [[alert textFieldAtIndex:0] resignFirstResponder];**/
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ingrédient" message:@"Ajout" delegate:self cancelButtonTitle:@"Annuler" otherButtonTitles:@"OK", nil];
     [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
     [alert show];
@@ -101,4 +125,8 @@
 }
 
 
+- (IBAction)remove:(id)sender {
+    [self clearFile];
+    [self viewDidLoad];
+}
 @end
