@@ -17,7 +17,7 @@ Notes 25/11/13 :
     L'ajoute à un fichier txt dans le repertoir home de l'application.
   - Ingrédient TableView qui ne marche pas avec le NSArray de test !
   - Display du contenu du fichier txt (ingrédient séparés par des ";").
-    <code>
+    `
     NSString *fileContents = [NSString stringWithContentsOfFile:@"myfile.txt"];<br>
     NSArray *lines = [fileContents componentsSeparatedByString:@"\n"];<br>
-    </code>
+    `
