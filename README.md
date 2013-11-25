@@ -5,7 +5,7 @@ iOS 7 Application
 
 Notes 25/11/13 :
   - Gestion de l'entrée du UIAlert qui récupere un ingrédient :<br>
-    ---<br>
+    <code>
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); <br>
     NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents directory <br>
     NSError *error; <br>
@@ -13,7 +13,11 @@ Notes 25/11/13 :
     if (!succeed){<br>
     		// Handle error here<br>
     }<br>
-    ---<br>
+    </code>
     L'ajoute à un fichier txt dans le repertoir home de l'application.
   - Ingrédient TableView qui ne marche pas avec le NSArray de test !
   - Display du contenu du fichier txt (ingrédient séparés par des ";").
+    <code>
+    NSString *fileContents = [NSString stringWithContentsOfFile:@"myfile.txt"];<br>
+    NSArray *lines = [fileContents componentsSeparatedByString:@"\n"];<br>
+    </code>
