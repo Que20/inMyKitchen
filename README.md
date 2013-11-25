@@ -18,6 +18,6 @@ Notes 25/11/13 :
   - Ingrédient TableView qui ne marche pas avec le NSArray de test !
   - Display du contenu du fichier txt (ingrédient séparés par des ";").
     `
-    NSString *fileContents = [NSString stringWithContentsOfFile:@"myfile.txt"];  
-    NSArray *lines = [fileContents componentsSeparatedByString:@"\n"];  
+    NSString *fileContents = [NSString stringWithContentsOfFile:@"myfile.txt"];   
+    NSArray *lines = [fileContents componentsSeparatedByString:@"\n"];   
     `
