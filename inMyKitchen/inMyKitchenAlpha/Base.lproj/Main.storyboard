@@ -97,6 +97,10 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="500"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="K6d-R7-F7l" id="8Cb-nB-Bsg"/>
+                                    <outlet property="delegate" destination="K6d-R7-F7l" id="tU6-Wi-KMB"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4e-Az-geS">
                                 <rect key="frame" x="0.0" y="528" width="271" height="40"/>
@@ -140,7 +144,7 @@
                         <barButtonItem key="backBarButtonItem" title="Kitchen!" id="kul-f2-flv"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="Mc4-B4-ott" id="WNS-3s-l8l"/>
+                        <outlet property="tableView" destination="Mc4-B4-ott" id="OHW-nS-igw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udj-Ji-F8W" userLabel="First Responder" sceneMemberID="firstResponder"/>

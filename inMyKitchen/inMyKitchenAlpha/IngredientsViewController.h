@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IngredientsViewController : UIViewController <UIAlertViewDelegate>
+@interface IngredientsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) IBOutlet UITextField *textField;

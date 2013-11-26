@@ -51,14 +51,11 @@
     NSString *writedStr = [[NSString alloc]initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     writedStr = [writedStr stringByAppendingFormat:appendedStr];
     
-    if([[NSFileManager defaultManager] fileExistsAtPath:fileName])
-    {
+    if([[NSFileManager defaultManager] fileExistsAtPath:fileName]){
         [[NSFileManager defaultManager] removeItemAtPath:fileName error:nil];
     }
-    //save content to the documents directory
     [writedStr writeToFile:fileName atomically:YES encoding:NSStringEncodingConversionAllowLossy error:nil];
 }
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -67,28 +64,26 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    //ingredients = [[NSArray alloc] initWithObjects: @"Farine", @"Sucre", @"Lait", @"Chocolat", nil];
-    NSString *fileContents = [NSString stringWithContentsOfFile:@"%@/ingredientsList.txt"];
-    NSArray *lines = [fileContents componentsSeparatedByString:@";"];
-    NSInteger len = [lines count];
-    NSLog(@"%@",lines);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *fileName = [NSString stringWithFormat:@"%@/ingredientsList.txt", documentsDirectory];
+    NSString *writedStr = [[NSString alloc]initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
+    ingredients = [writedStr componentsSeparatedByString:@";"];
+    NSLog(@"%@",ingredients);
+    
+    
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark -
-#pragma mark Table view data source
-
-- (NSInteger) numberOfSectionInTableView:(UITableView*) tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    // Return the number of sections.
     return 1;
 }
 
@@ -102,19 +97,12 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.accessoryType = UITableViewCellStyleDefault;
         }
     }
     cell.textLabel.text = [ingredients objectAtIndex:indexPath.row];
     cell.textLabel.textColor = [UIColor blackColor];
     return cell;
-}
-
-#pragma mark -
-#pragma mark Table view delegate
-
-- (void) tableview : (UITableView *) tableView didSelectAtIndexPath:(NSIndexPath *) indexpath{
-    NSLog(@"row %d",indexpath.row);
 }
 
 - (IBAction)add:(id)sender {
@@ -123,10 +111,9 @@
     [alert show];
     
 }
-
-
 - (IBAction)remove:(id)sender {
     [self clearFile];
     [self viewDidLoad];
 }
+
 @end
