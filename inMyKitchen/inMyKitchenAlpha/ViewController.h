@@ -11,5 +11,6 @@
 @interface ViewController : UIViewController
 @property(nonatomic, retain) UIColor *barTintColor;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
+@property (strong, nonatomic) IBOutlet UIWindow *window;
 
 @end

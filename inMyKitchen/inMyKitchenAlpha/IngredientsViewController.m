@@ -31,7 +31,6 @@
     }
     
 }
-
 -(void)clearFile{
      NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
      NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents directory
@@ -43,7 +42,6 @@
          NSLog(@"Fichié vidé");
      }
 }
-
 -(void)writeATEndOfFile:(NSString *)appendedStr{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -55,6 +53,8 @@
         [[NSFileManager defaultManager] removeItemAtPath:fileName error:nil];
     }
     [writedStr writeToFile:fileName atomically:YES encoding:NSStringEncodingConversionAllowLossy error:nil];
+    
+    [self.tableView reloadData];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -67,30 +67,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self load];
+    NSLog(@"%@",ingredients);
+}
+-(void) load{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *fileName = [NSString stringWithFormat:@"%@/ingredientsList.txt", documentsDirectory];
     NSString *writedStr = [[NSString alloc]initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     ingredients = [writedStr componentsSeparatedByString:@";"];
-    NSLog(@"%@",ingredients);
-    
-    
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     // Return the number of sections.
     return 1;
 }
-
 - (NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger)section{
     return [ingredients count];
 }
-
 - (UITableViewCell *)tableView:(UITableView *)tableViewX cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableViewX dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -104,7 +102,6 @@
     cell.textLabel.textColor = [UIColor blackColor];
     return cell;
 }
-
 - (IBAction)add:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ingrédient" message:@"Ajout" delegate:self cancelButtonTitle:@"Annuler" otherButtonTitles:@"OK", nil];
     [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
@@ -113,7 +110,10 @@
 }
 - (IBAction)remove:(id)sender {
     [self clearFile];
-    [self viewDidLoad];
+    //[tableView deleteRowsAtIndexPaths:ingredients withRowAnimation:UITableViewRowAnimationFade];
+    //ingredients = [[NSArray alloc] init];
+    [self load];
+    [self.tableView reloadData];
 }
 
 @end

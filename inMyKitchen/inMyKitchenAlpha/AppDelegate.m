@@ -13,6 +13,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UIStoryboard *storyBoard;
+    CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+    if (iOSDeviceScreenSize.height == 480){
+        // iPhone 3GS, 4, and 4S and iPod Touch 3rd and 4th generation: 3.5 inch screen (diagonally measured)
+        /*UIStoryboard *iphone35sb;
+        iphone35sb = [UIStoryboard storyboardWithName:@"StoryboardiPhone35" bundle:nil];
+        UIViewController *initVC = [storyBoard instantiateInitialViewController];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        self.window.rootViewController  = initVC;
+        [self.window makeKeyAndVisible];*/
+        storyBoard = [UIStoryboard storyboardWithName:@"StoryboardiPhone35" bundle:nil];
+        UIViewController *initViewController = [storyBoard instantiateInitialViewController];
+        [self.window setRootViewController:initViewController];
+    }else{
+        storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *initViewController = [storyBoard instantiateInitialViewController];
+        [self.window setRootViewController:initViewController];
+    }
     return YES;
 }
 							
