@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A1D31031842374400293249 /* IngredientsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D31021842374400293249 /* IngredientsViewController.m */; };
 		0A26EA3E18456D4A000AB00E /* StoryboardiPhone35.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A26EA3D18456D4A000AB00E /* StoryboardiPhone35.storyboard */; };
+		0A45258F1848E42D00568B21 /* fridge.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A45258E1848E42D00568B21 /* fridge.png */; };
+		0A8BF2F51847C1DB00E39AC6 /* RecettesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A8BF2F41847C1DB00E39AC6 /* RecettesViewController.m */; };
 		0AB6B8D21841765100AE592D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB6B8D11841765100AE592D /* Foundation.framework */; };
 		0AB6B8D41841765100AE592D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB6B8D31841765100AE592D /* CoreGraphics.framework */; };
 		0AB6B8D61841765100AE592D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB6B8D51841765100AE592D /* UIKit.framework */; };
@@ -24,6 +26,7 @@
 		0AB6B8FB1841765100AE592D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0AB6B8F91841765100AE592D /* InfoPlist.strings */; };
 		0AB6B8FD1841765100AE592D /* inMyKitchenAlphaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6B8FC1841765100AE592D /* inMyKitchenAlphaTests.m */; };
 		0ADD95AF1843F72D00270E89 /* trash.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADD95AE1843F72D00270E89 /* trash.png */; };
+		0ADFBA441847D0F100BFD82E /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0ADFBA431847D0F100BFD82E /* Data.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		0A1D31011842374400293249 /* IngredientsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsViewController.h; sourceTree = "<group>"; };
 		0A1D31021842374400293249 /* IngredientsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientsViewController.m; sourceTree = "<group>"; };
 		0A26EA3D18456D4A000AB00E /* StoryboardiPhone35.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardiPhone35.storyboard; sourceTree = "<group>"; };
+		0A45258E1848E42D00568B21 /* fridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fridge.png; sourceTree = "<group>"; };
+		0A8BF2F31847C1DB00E39AC6 /* RecettesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecettesViewController.h; sourceTree = "<group>"; };
+		0A8BF2F41847C1DB00E39AC6 /* RecettesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecettesViewController.m; sourceTree = "<group>"; };
 		0AB6B8CE1841765100AE592D /* inMyKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inMyKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AB6B8D11841765100AE592D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0AB6B8D31841765100AE592D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,6 +66,7 @@
 		0AB6B8FA1841765100AE592D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0AB6B8FC1841765100AE592D /* inMyKitchenAlphaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inMyKitchenAlphaTests.m; sourceTree = "<group>"; };
 		0ADD95AE1843F72D00270E89 /* trash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trash.png; sourceTree = "<group>"; };
+		0ADFBA431847D0F100BFD82E /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Data.plist; path = ../Data.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +133,12 @@
 				0AB6B8E71841765100AE592D /* ViewController.m */,
 				0A1D31011842374400293249 /* IngredientsViewController.h */,
 				0A1D31021842374400293249 /* IngredientsViewController.m */,
+				0A8BF2F31847C1DB00E39AC6 /* RecettesViewController.h */,
+				0A8BF2F41847C1DB00E39AC6 /* RecettesViewController.m */,
 				0AB6B8E31841765100AE592D /* Main.storyboard */,
 				0A26EA3D18456D4A000AB00E /* StoryboardiPhone35.storyboard */,
 				0AB6B8E91841765100AE592D /* Images.xcassets */,
+				0ADFBA431847D0F100BFD82E /* Data.plist */,
 				0AB6B8D81841765100AE592D /* Supporting Files */,
 			);
 			name = inMyKitchen;
@@ -168,6 +178,7 @@
 		0ADD95AD1843F72D00270E89 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0A45258E1848E42D00568B21 /* fridge.png */,
 				0ADD95AE1843F72D00270E89 /* trash.png */,
 			);
 			name = Images;
@@ -250,11 +261,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ADFBA441847D0F100BFD82E /* Data.plist in Resources */,
 				0AB6B8EA1841765100AE592D /* Images.xcassets in Resources */,
 				0AB6B8DC1841765100AE592D /* InfoPlist.strings in Resources */,
 				0AB6B8E51841765100AE592D /* Main.storyboard in Resources */,
 				0ADD95AF1843F72D00270E89 /* trash.png in Resources */,
 				0A26EA3E18456D4A000AB00E /* StoryboardiPhone35.storyboard in Resources */,
+				0A45258F1848E42D00568B21 /* fridge.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +289,7 @@
 				0AB6B8E81841765100AE592D /* ViewController.m in Sources */,
 				0A1D31031842374400293249 /* IngredientsViewController.m in Sources */,
 				0AB6B8E21841765100AE592D /* AppDelegate.m in Sources */,
+				0A8BF2F51847C1DB00E39AC6 /* RecettesViewController.m in Sources */,
 				0AB6B8DE1841765100AE592D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
