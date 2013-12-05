@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<array>
+	<dict>
+		<key>Ingredients</key>
+		<array>
+			<string>Pate</string>
+			<string>Tomates</string>
+			<string>Fromage</string>
+		</array>
+		<key>Nom</key>
+		<string>Pizza</string>
+		<key>Image</key>
+		<string>http://</string>
+		<key>Recette</key>
+		<string>blabla</string>
+	</dict>
+	<dict>
+		<key>Ingredients</key>
+		<array>
+			<string>Pain</string>
+			<string>Viande</string>
+			<string>Frites</string>
+		</array>
+		<key>Nom</key>
+		<string>Humberger</string>
+		<key>Image</key>
+		<string>http://</string>
+		<key>Recette</key>
+		<string>blabla</string>
+	</dict>
+	<dict>
+		<key>Ingredients</key>
+		<array>
+			<string>Pate</string>
+			<string>Carbonara</string>
+			<string>Fromage</string>
+		</array>
+		<key>Nom</key>
+		<string>Pattes Carbonara</string>
+		<key>Image</key>
+		<string>http://</string>
+		<key>Recette</key>
+		<string>blabla</string>
+	</dict>
+</array>
 </plist>
