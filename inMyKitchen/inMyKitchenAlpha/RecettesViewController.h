@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RecettesViewController : UIViewController
-
+@interface RecettesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UILabel *nbIngredients;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray* content;
 @end
