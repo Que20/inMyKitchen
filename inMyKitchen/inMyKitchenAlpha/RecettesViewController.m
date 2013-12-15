@@ -68,6 +68,10 @@
         }
     }
     // Return the cell details : text and image
+    int i=0;
+    for (i=0; i<3; i++){
+        
+    }
     cell.textLabel.text = [[self.content objectAtIndex:indexPath.row] valueForKey:@"Nom"];
     //cell.imageView.image = [UIimage imageNamed:@"img.jpg"];
     return cell;
@@ -83,5 +87,9 @@
     }
     return list;
 }
+
+
+
+
 
 @end
