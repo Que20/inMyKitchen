@@ -74,7 +74,7 @@
     return cell;
 }
 - (NSArray *) getIngredients{
-    int i = 0;
+    int i = 0, j = 0;
     id obj;
     NSArray* list;
     NSArray* user = [ self getUser ];
@@ -83,6 +83,9 @@
         obj = [self.content objectAtIndex:i];
         list = [obj valueForKey:@"Ingredients"];
         
+        for(j = 0; j < [user count]; j++){
+            
+        }
         NSLog(@"%@",list);
     }
     return list;
