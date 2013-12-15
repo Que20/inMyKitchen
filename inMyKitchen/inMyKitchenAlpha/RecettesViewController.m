@@ -29,6 +29,7 @@
     NSString* txtlbl;
     txtlbl = [NSString stringWithFormat:@"Vous avez %d ingrédients",[self ingredientsCounter]-1];
     self.nbIngredients.text = txtlbl;
+    [self getIngredients];
 }
 - (void) didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
@@ -68,10 +69,6 @@
         }
     }
     // Return the cell details : text and image
-    int i=0;
-    for (i=0; i<3; i++){
-        
-    }
     cell.textLabel.text = [[self.content objectAtIndex:indexPath.row] valueForKey:@"Nom"];
     //cell.imageView.image = [UIimage imageNamed:@"img.jpg"];
     return cell;
@@ -80,9 +77,12 @@
     int i = 0;
     id obj;
     NSArray* list;
+    NSArray* user = [ self getUser ];
+    
     for(i = 0; i < [self.content count]; i++){
         obj = [self.content objectAtIndex:i];
-        [obj valueForKey:@"Ingredients"];
+        list = [obj valueForKey:@"Ingredients"];
+        
         NSLog(@"%@",list);
     }
     return list;
