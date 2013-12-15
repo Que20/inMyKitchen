@@ -84,4 +84,14 @@
     return list;
 }
 
+- (NSArray *) getUser{
+    NSArray *uIngredients;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *fileName = [NSString stringWithFormat:@"%@/ingredientsList.txt", documentsDirectory];
+    NSString *writedStr = [[NSString alloc]initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
+    uIngredients = [writedStr componentsSeparatedByString:@";"];
+    return uIngredients;
+}
+
 @end
