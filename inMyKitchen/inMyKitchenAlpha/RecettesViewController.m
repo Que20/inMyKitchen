@@ -68,6 +68,10 @@
         }
     }
     // Return the cell details : text and image
+    int i=0;
+    for (i=0; i<3; i++){
+        
+    }
     cell.textLabel.text = [[self.content objectAtIndex:indexPath.row] valueForKey:@"Nom"];
     //cell.imageView.image = [UIimage imageNamed:@"img.jpg"];
     return cell;
@@ -84,6 +88,7 @@
     return list;
 }
 
+<<<<<<< HEAD
 - (NSArray *) getUser{
     NSArray *uIngredients;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -93,5 +98,10 @@
     uIngredients = [writedStr componentsSeparatedByString:@";"];
     return uIngredients;
 }
+=======
+
+
+
+>>>>>>> af8666ee11f1050c4555cf824936e7a64650a701
 
 @end
