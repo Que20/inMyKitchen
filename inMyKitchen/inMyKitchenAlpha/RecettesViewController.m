@@ -88,7 +88,6 @@
     return list;
 }
 
-<<<<<<< HEAD
 - (NSArray *) getUser{
     NSArray *uIngredients;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
