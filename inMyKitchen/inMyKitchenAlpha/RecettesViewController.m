@@ -72,5 +72,16 @@
     //cell.imageView.image = [UIimage imageNamed:@"img.jpg"];
     return cell;
 }
+- (NSArray *) getIngredients{
+    int i = 0;
+    id obj;
+    NSArray* list;
+    for(i = 0; i < [self.content count]; i++){
+        obj = [self.content objectAtIndex:i];
+        [obj valueForKey:@"Ingredients"];
+        NSLog(@"%@",list);
+    }
+    return list;
+}
 
 @end
