@@ -97,10 +97,6 @@
     uIngredients = [writedStr componentsSeparatedByString:@";"];
     return uIngredients;
 }
-=======
 
-
-
->>>>>>> af8666ee11f1050c4555cf824936e7a64650a701
 
 @end
