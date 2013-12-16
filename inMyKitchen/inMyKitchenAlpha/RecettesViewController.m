@@ -74,7 +74,8 @@
     return cell;
 }
 - (NSArray *) getIngredients{
-    int i = 0, j = 0;
+    int i = 0, j = 0, k = 0;
+    int cptr = 0;
     id obj;
     NSArray* list;
     NSArray* user = [ self getUser ];
@@ -82,11 +83,16 @@
     for(i = 0; i < [self.content count]; i++){
         obj = [self.content objectAtIndex:i];
         list = [obj valueForKey:@"Ingredients"];
-        
-        for(j = 0; j < [user count]; j++){
-            
-        }
         NSLog(@"%@",list);
+        for(k = 0; k < [list count]; k++){
+            for(j = 0; j < [user count]; j++){
+                if([list objectAtIndex:k] == [user objectAtIndex:j]){
+                    NSLog(@"%d",cptr);
+                    cptr++;
+                }
+            }
+        }
+        
     }
     return list;
 }
