@@ -13,9 +13,11 @@
 @end
 
 @implementation RecettesViewController
-
+// Je syntetise des propertys déclarés dans le header du fichier (RecettesViewController.h)
+// à ne pas confondre avec self.nomDeLaProperty qui la rends simplement accessible
 @synthesize tableView, content = _content;
 
+// autogénéré powa \o/
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -23,9 +25,11 @@
     }
     return self;
 }
+// Fonction qui fait office de main à la vue
 - (void) viewDidLoad{
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    // met à jour le label "Vous avez X ingrédients
     NSString* txtlbl;
     txtlbl = [NSString stringWithFormat:@"Vous avez %d ingrédients",[self ingredientsCounter]-1];
     self.nbIngredients.text = txtlbl;
@@ -35,6 +39,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+// Fonction qui récupere le contenu du Plist pour en faire un tableau
 - (NSArray *) content{
     if(!_content){
         NSString* path = [[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"];
@@ -42,6 +47,8 @@
     }
     return _content;
 }
+// Fonction qui compte les ingredients
+// !! à optimiser !!
 - (int) ingredientsCounter{
     NSArray* ingredients;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -51,14 +58,18 @@
     ingredients = [writedStr componentsSeparatedByString:@";"];
     return [ingredients count];
 }
+// Autogénéré obligatoir pour une tableviw
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     // Return the number of sections.
     return 1;
 }
+// Autogénéré obligatoir pour une tableviw
 - (NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger)section{
     // Return the number of cell ([data count])
     return [self.content count];
 }
+// Autogénéré obligatoir pour une tableviw
+// Fonction chargée de créer chaque cellule : renvoie la cellule de type UITableViewCell
 - (UITableViewCell *)tableView:(UITableView *)tableViewX cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableViewX dequeueReusableCellWithIdentifier:CellIdentifier];
