@@ -84,22 +84,29 @@
     //cell.imageView.image = [UIimage imageNamed:@"img.jpg"];
     return cell;
 }
+// Fonction qui récupere les ingrédients à afficher en cellule
+// !! à prendre en compte dans cellForRowAtIndexPath !!
 - (NSArray *) getIngredients{
     int i = 0, j = 0, k = 0;
     int cptr = 0;
     id obj;
     NSArray* list;
-    NSArray* user = [ self getUser ];
-    
+    NSArray* user = [self getUser];
+    // for de parcour du contenu de content (le fichier plist)
     for(i = 0; i < [self.content count]; i++){
         obj = [self.content objectAtIndex:i];
+        // récupération de "Ingrédient"
         list = [obj valueForKey:@"Ingredients"];
         NSLog(@"%@",list);
+        // for de parcour de list, la liste des ingrédients de chaque item du plist
         for(k = 0; k < [list count]; k++){
+            // for de parcour de la liste des ingrédients entrés par l'user
             for(j = 0; j < [user count]; j++){
+                // si un ingrédient entré par l'user et présent dans la liste d'ungredients d'un item
                 if([list objectAtIndex:k] == [user objectAtIndex:j]){
-                    NSLog(@"%d",cptr);
+                    // on incrémente le compteur
                     cptr++;
+                    NSLog(@"%d",cptr);
                 }
             }
         }
