@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Ingedients">
+                                <state key="normal" title="Ingrédients">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -44,7 +44,7 @@
                                 <rect key="frame" x="79" y="333" width="162" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="... Et nous vous trouverons le plat qu'il vous faut !">
+                                    <fragment content="... Je te dirais la recette qu'il te faut.">
                                         <attributes>
                                             <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <font key="NSFont" size="17" name="HelveticaNeue"/>
@@ -58,7 +58,7 @@
                                 <rect key="frame" x="74" y="238" width="167" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Dites-nous ce que vous avez dans votre cuisine ...">
+                                    <fragment content="Dis moi ce que t'as dans ton frigo... ">
                                         <attributes>
                                             <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <font key="NSFont" size="17" name="HelveticaNeue"/>
@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="637" y="142"/>
+            <point key="canvasLocation" x="635" y="142"/>
         </scene>
         <!--Recettes View Controller - Recettes-->
         <scene sceneID="WGF-E7-yO5">
@@ -132,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="1169" y="475"/>
         </scene>
-        <!--Ingredients View Controller - Ingredients-->
+        <!--Ingredients View Controller - Ingrédients-->
         <scene sceneID="i2U-0X-ECY">
             <objects>
                 <viewController id="K6d-R7-F7l" customClass="IngredientsViewController" sceneMemberID="viewController">
@@ -191,7 +191,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Ingredients" id="EVz-yn-6hr">
+                    <navigationItem key="navigationItem" title="Ingrédients" id="EVz-yn-6hr">
                         <barButtonItem key="backBarButtonItem" title="Kitchen" id="kul-f2-flv"/>
                     </navigationItem>
                     <connections>
