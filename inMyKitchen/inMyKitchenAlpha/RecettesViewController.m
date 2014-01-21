@@ -13,7 +13,7 @@
 @end
 
 @implementation RecettesViewController
-// Je syntetise des propertys déclarés dans le header du fichier (RecettesViewController.h)
+// Je syntetise des propertys déclarées dans le header du fichier (RecettesViewController.h)
 // à ne pas confondre avec self.nomDeLaProperty qui la rends simplement accessible
 @synthesize tableView, content = _content;
 
@@ -39,7 +39,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-// Fonction qui récupere le contenu du Plist pour en faire un tableau
+// Fonction qui récupère le contenu du Plist pour en faire un tableau
 - (NSArray *) content{
     if(!_content){
         NSString* path = [[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"];
@@ -58,17 +58,17 @@
     ingredients = [writedStr componentsSeparatedByString:@";"];
     return [ingredients count];
 }
-// Autogénéré obligatoir pour une tableviw
+// Autogénéré obligatoire pour une tableview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     // Return the number of sections.
     return 1;
 }
-// Autogénéré obligatoir pour une tableviw
+// Autogénéré obligatoire pour une tableview
 - (NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger)section{
     // Return the number of cell ([data count])
     return [self.content count];
 }
-// Autogénéré obligatoir pour une tableviw
+// Autogénéré obligatoire pour une tableview
 // Fonction chargée de créer chaque cellule : renvoie la cellule de type UITableViewCell
 - (UITableViewCell *)tableView:(UITableView *)tableViewX cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
@@ -91,7 +91,7 @@
     int cptr = 0;
     id obj;
     NSArray* user = [self getUser];
-    // for de parcour du contenu de content (le fichier plist)
+    // for de parcours du contenu de content (le fichier plist)
     for(i = 0; i < [self.content count]; i++){
         obj = [self.content objectAtIndex:i];
         // récupération de "Ingrédient"
