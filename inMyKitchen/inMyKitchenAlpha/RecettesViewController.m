@@ -30,6 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     // met à jour le label "Vous avez X ingrédients
+    NSInteger testKiki = [self getIngredients];
     NSString* txtlbl;
     txtlbl = [NSString stringWithFormat:@"Vous avez %d ingrédients",[self ingredientsCounter]-1];
     self.nbIngredients.text = txtlbl;
@@ -109,6 +110,11 @@
                     // on incrémente le compteur
                     cptr++;
                     NSLog(@"%d",cptr);
+                    // calcul du match
+                    // if on est dans le match
+                    // ajout au tableau global à générer
+                        // parcours de à generer
+                        // ajout au tableau
                 }
             }
         }
