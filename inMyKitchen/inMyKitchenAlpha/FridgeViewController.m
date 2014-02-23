@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Kevin Maarek. All rights reserved.
 //
 
-#import "IngredientsViewController.h"
+#import "FridgeViewController.h"
 
 @interface IngredientsViewController (){
     NSArray *ingredients;
@@ -19,9 +19,9 @@
 @synthesize tableView;
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    self.test = [[alertView textFieldAtIndex:0] text];
-    if([self.test length]!= 0){
-        [self writeATEndOfFile:self.test];
+    self.item = [[alertView textFieldAtIndex:0] text];
+    if([self.item length]!= 0){
+        [self writeATEndOfFile:self.item];
         [self writeATEndOfFile:@";"];
         [self viewDidLoad];
         NSLog(@"Ingrédient ajouté");
@@ -31,10 +31,11 @@
     }
     
 }
+
 -(void)clearFile{
-     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-     NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents directory
-     NSError *error;
+     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+     NSString* documentsDirectory = [paths objectAtIndex:0];
+     NSError* error;
      BOOL succeed = [@"" writeToFile:[documentsDirectory stringByAppendingPathComponent:@"ingredientsList.txt"] atomically:YES encoding:NSUTF8StringEncoding error:&error];
      if (!succeed){
          NSLog(@"Erreur");
@@ -42,11 +43,12 @@
          NSLog(@"Fichié vidé");
      }
 }
--(void)writeATEndOfFile:(NSString *)appendedStr{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *fileName = [NSString stringWithFormat:@"%@/ingredientsList.txt", documentsDirectory];
-    NSString *writedStr = [[NSString alloc]initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
+
+-(void)writeATEndOfFile:(NSString*)appendedStr{
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString* documentsDirectory = [paths objectAtIndex:0];
+    NSString* fileName = [NSString stringWithFormat:@"%@/ingredientsList.txt", documentsDirectory];
+    NSString* writedStr = [[NSString alloc]initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     writedStr = [writedStr stringByAppendingFormat:appendedStr];
     
     if([[NSFileManager defaultManager] fileExistsAtPath:fileName]){
@@ -56,20 +58,21 @@
     
     [self.tableView reloadData];
 }
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
 }
-- (void)viewDidLoad
-{
+
+- (void)viewDidLoad{
     [super viewDidLoad];
     [self load];
     NSLog(@"%@",ingredients);
 }
+
 -(void) load{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -77,18 +80,20 @@
     NSString *writedStr = [[NSString alloc]initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
     ingredients = [writedStr componentsSeparatedByString:@";"];
 }
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     // Return the number of sections.
     return 1;
 }
+
 - (NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger)section{
     return [ingredients count];
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableViewX cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableViewX dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -102,16 +107,16 @@
     cell.textLabel.textColor = [UIColor blackColor];
     return cell;
 }
+
 - (IBAction)add:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ingrédient" message:@"Ajout" delegate:self cancelButtonTitle:@"Annuler" otherButtonTitles:@"OK", nil];
     [alert setAlertViewStyle:UIAlertViewStylePlainTextInput];
     [alert show];
     
 }
+
 - (IBAction)remove:(id)sender {
     [self clearFile];
-    //[tableView deleteRowsAtIndexPaths:ingredients withRowAnimation:UITableViewRowAnimationFade];
-    //ingredients = [[NSArray alloc] init];
     [self load];
     [self.tableView reloadData];
 }

@@ -5,7 +5,7 @@
 //  Created by Kevin Maarek on 24/11/2013.
 //  Copyright (c) 2013 Kevin Maarek. All rights reserved.
 //
-//  Le Marma est passé par là.
+//
 
 #import <UIKit/UIKit.h>
 
@@ -13,5 +13,8 @@
 @property(nonatomic, retain) UIColor *barTintColor;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @property (strong, nonatomic) IBOutlet UIWindow *window;
+@property (weak, nonatomic) IBOutlet UIButton *ingredientsBtn;
+@property (weak, nonatomic) IBOutlet UIButton *recettesBtn;
+@property (weak, nonatomic) IBOutlet UITableView *tableRecent;
 
 @end

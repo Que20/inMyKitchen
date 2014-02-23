@@ -12,4 +12,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *nbIngredients;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray* content;
+@property (strong, nonatomic) NSArray* toDisplay;
 @end
