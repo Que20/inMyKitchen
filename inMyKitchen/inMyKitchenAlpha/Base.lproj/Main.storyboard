@@ -57,12 +57,18 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gp-kT-Ci6">
                                 <rect key="frame" x="0.0" y="528" width="160" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<<<<<<< HEAD
                                 <color key="backgroundColor" red="0.023529411764705882" green="0.47843137254901957" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Hrr-PG-hFR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Marion-Bold" family="Marion" pointSize="20"/>
                                 <state key="normal" title="Ingrédients">
+=======
+                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Ingedients">
+>>>>>>> a55b674136e786d2c5b2311ee91939683e6e0081
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -84,12 +90,42 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cuillere bois.png" translatesAutoresizingMaskIntoConstraints="NO" id="yh5-Ek-iHV">
                                 <rect key="frame" x="62" y="412" width="216" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<<<<<<< HEAD
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="BHj-J6-qze"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baniere.png" translatesAutoresizingMaskIntoConstraints="NO" id="nvd-K3-o4Y">
                                 <rect key="frame" x="0.0" y="479" width="320" height="50"/>
+=======
+                                <attributedString key="attributedText">
+                                    <fragment content="... Et nous vous trouverons le plat qu'il vous faut !">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="charWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="167" translatesAutoresizingMaskIntoConstraints="NO" id="7MF-a1-CO0">
+                                <rect key="frame" x="74" y="238" width="167" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Dites-nous ce que vous avez dans votre cuisine ...">
+                                        <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="charWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fridge.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ayo-AA-XiL">
+                                <rect key="frame" x="90" y="78" width="140" height="152"/>
+>>>>>>> a55b674136e786d2c5b2311ee91939683e6e0081
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nJ9-3d-tmt">
@@ -206,6 +242,7 @@
             </objects>
             <point key="canvasLocation" x="1169" y="475"/>
         </scene>
+<<<<<<< HEAD
         <!--Recipe Detail View Controller - inMyKitchen-->
         <scene sceneID="wQD-Qo-cZo">
             <objects>
@@ -272,6 +309,8 @@
             </objects>
             <point key="canvasLocation" x="1632" y="475"/>
         </scene>
+=======
+>>>>>>> a55b674136e786d2c5b2311ee91939683e6e0081
         <!--Ingredients View Controller - Ingredients-->
         <scene sceneID="i2U-0X-ECY">
             <objects>
@@ -354,7 +393,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ingredients" id="EVz-yn-6hr">
+<<<<<<< HEAD
                         <barButtonItem key="backBarButtonItem" title="Back" id="kul-f2-flv"/>
+=======
+                        <barButtonItem key="backBarButtonItem" title="Kitchen" id="kul-f2-flv"/>
+>>>>>>> a55b674136e786d2c5b2311ee91939683e6e0081
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Mc4-B4-ott" id="OHW-nS-igw"/>

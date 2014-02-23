@@ -30,6 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     // met à jour le label "Vous avez X ingrédients
+    NSInteger testKiki = [self getIngredients];
     NSString* txtlbl;
     txtlbl = [NSString stringWithFormat:@"Vous avez %d ingrédients",(int)[self ingredientsCounter]-1];
     self.nbIngredients.text = txtlbl;
@@ -117,6 +118,7 @@ float pourcentage(NSInteger value){
 - (void) getIngredientsQue20{
     int i,j,k;
     int cptr = 0;
+<<<<<<< HEAD:inMyKitchen/inMyKitchenAlpha/RecipeViewController.m
     NSMutableArray* tmpToDisplay = [[NSMutableArray alloc] initWithCapacity:1];
     for(i = 0; i < [self.content count]; i++){
         NSArray* receipe = [[self.content objectAtIndex:i] valueForKey:@"Ingredients"];
@@ -130,6 +132,33 @@ float pourcentage(NSInteger value){
                 if([receipeItem isEqualToString:fridgeItem]){
                     cptr ++;
                     break;
+=======
+    id obj;
+    NSArray* user = [self getUser];
+    // for de parcours du contenu de content (le fichier plist)
+    for(i = 0; i < [self.content count]; i++){
+        obj = [self.content objectAtIndex:i];
+        // récupération de "Ingrédient"
+        NSArray* list = [obj valueForKey:@"Ingredients"]; // !! Le contenu s'affiche bien dans la console, mais le debug ne montre rien !!
+        NSLog(@"%@",list);
+        // for de parcour de list, la liste des ingrédients de chaque item du plist
+        for(k = 0; k < [list count]; k++){
+            NSString* sousItem = [list objectAtIndex:k];
+            // NSLog(@"%@",sousItem); // => log bien les ingrédients !!!
+            // for de parcour de la liste des ingrédients entrés par l'user
+            for(j = 0; j < [user count]; j++){
+                // si un ingrédient entré par l'user et présent dans la liste d'ungredients d'un item
+                // l'opérateur "==" est OK pour la comparaison de NSStrings
+                if(sousItem == [user objectAtIndex:j]){
+                    // on incrémente le compteur
+                    cptr++;
+                    NSLog(@"%d",cptr);
+                    // calcul du match
+                    // if on est dans le match
+                    // ajout au tableau global à générer
+                        // parcours de à generer
+                        // ajout au tableau
+>>>>>>> a55b674136e786d2c5b2311ee91939683e6e0081:inMyKitchen/inMyKitchenAlpha/RecettesViewController.m
                 }
             }
         }
