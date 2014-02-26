@@ -15,7 +15,7 @@
 @implementation RecettesViewController
 // Je syntetise des propertys déclarées dans le header du fichier (RecettesViewController.h)
 // à ne pas confondre avec self.nomDeLaProperty qui la rends simplement accessible
-@synthesize tableView, content = _content;
+@synthesize tableView, content = _content; //tableau à créer
 
 // autogénéré powa \o/
 - (id) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
