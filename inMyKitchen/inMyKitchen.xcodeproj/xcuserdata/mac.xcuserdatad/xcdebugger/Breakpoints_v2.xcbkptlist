@@ -6,11 +6,27 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "inMyKitchenAlpha/RecettesViewController.m"
             timestampString = "413073421.816788"
+=======
+<<<<<<< HEAD
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "inMyKitchenAlpha/RecettesViewController.m"
+            timestampString = "413073421.816788"
+=======
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "inMyKitchenAlpha/RecettesViewController.m"
+            timestampString = "412015797.26943"
+>>>>>>> a55b674136e786d2c5b2311ee91939683e6e0081
+>>>>>>> 05048f25f6b8f5643af43bc4fe9fff7a309de1c2
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -19,5 +35,27 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "inMyKitchenAlpha/RecettesViewController.m"
+            timestampString = "412023188.105849"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-getIngredients"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+>>>>>>> a55b674136e786d2c5b2311ee91939683e6e0081
+>>>>>>> 05048f25f6b8f5643af43bc4fe9fff7a309de1c2
    </Breakpoints>
 </Bucket>
