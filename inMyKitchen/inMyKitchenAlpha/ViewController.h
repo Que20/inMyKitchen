@@ -13,5 +13,8 @@
 @property(nonatomic, retain) UIColor *barTintColor;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navigationBar;
 @property (strong, nonatomic) IBOutlet UIWindow *window;
+@property (weak, nonatomic) IBOutlet UIButton *ingredientsBtn;
+@property (weak, nonatomic) IBOutlet UIButton *recettesBtn;
+@property (weak, nonatomic) IBOutlet UITableView *tableRecent;
 
 @end

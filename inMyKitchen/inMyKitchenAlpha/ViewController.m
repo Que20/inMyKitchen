@@ -12,16 +12,46 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+    NSArray *tableData;
+}
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-		
-    //self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
-    //self.navigationController.navigationBar.translucent = YES;
-    //[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    tableData = [self content];
+	self.recettesBtn.showsTouchWhenHighlighted = YES;
+    self.ingredientsBtn.showsTouchWhenHighlighted = YES;
+}
+
+- (NSArray *) content{
+    if(!tableData){
+        NSString* path = [[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"];
+        tableData = [[NSArray alloc] initWithContentsOfFile:path];
+    }
+    return tableData;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [[tableData objectAtIndex:indexPath.row] valueForKey:@"Nom"];
+    
+    NSString *urlString = [[tableData objectAtIndex:indexPath.row] valueForKey:@"Image"];
+    NSData* imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlString]];
+    cell.imageView.image = [UIImage imageWithData: imageData];
+
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning{

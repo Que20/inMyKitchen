@@ -5,8 +5,8 @@
 //  Created by Kevin Maarek on 28/11/2013.
 //  Copyright (c) 2013 Kevin Maarek. All rights reserved.
 //
-
-#import "RecettesViewController.h"
+#import "RecipeDetailViewController.h"
+#import "RecipeViewController.h"
 
 @interface RecettesViewController ()
 
@@ -32,9 +32,12 @@
     // met à jour le label "Vous avez X ingrédients
     NSInteger testKiki = [self getIngredients];
     NSString* txtlbl;
-    txtlbl = [NSString stringWithFormat:@"Vous avez %d ingrédients",[self ingredientsCounter]-1];
+    txtlbl = [NSString stringWithFormat:@"Vous avez %d ingrédients",(int)[self ingredientsCounter]-1];
     self.nbIngredients.text = txtlbl;
-    [self getIngredients];
+    // LA LIGNE QUI VA SUIVRE EST HARD CORE
+    //NSString* Hello = [[[self.content objectAtIndex:1] valueForKey:@"Ingredients"] objectAtIndex:1];
+    //NSLog(@"%@",Hello);
+    // ET ELLE MARCHE !
 }
 - (void) didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
@@ -50,7 +53,7 @@
 }
 // Fonction qui compte les ingredients
 // !! à optimiser !!
-- (int) ingredientsCounter{
+- (NSInteger) ingredientsCounter{
     NSArray* ingredients;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -67,10 +70,12 @@
 // Autogénéré obligatoire pour une tableview
 - (NSInteger) tableView:(UITableView *) tableView numberOfRowsInSection:(NSInteger)section{
     // Return the number of cell ([data count])
-    return [self.content count];
+    [self getIngredientsQue20];
+    return [self.toDisplay count];
 }
 // Autogénéré obligatoire pour une tableview
 // Fonction chargée de créer chaque cellule : renvoie la cellule de type UITableViewCell
+/**
 - (UITableViewCell *)tableView:(UITableView *)tableViewX cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableViewX dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -81,15 +86,53 @@
         }
     }
     // Return the cell details : text and image
-    cell.textLabel.text = [[self.content objectAtIndex:indexPath.row] valueForKey:@"Nom"];
+    cell.textLabel.text = [self.toDisplay objectAtIndex:indexPath.row];
     //cell.imageView.image = [UIimage imageNamed:@"img.jpg"];
     return cell;
 }
-// Fonction qui récupere les ingrédients à afficher en cellule
-// !! à prendre en compte dans cellForRowAtIndexPath !!
-- (int) getIngredients{
-    int i = 0, j = 0, k = 0;
+**/
+
+- (UITableViewCell *)tableView:(UITableView *)tableViewX cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"RecipeCell";
+    
+    UITableViewCell *cell = [tableViewX dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [self.toDisplay objectAtIndex:indexPath.row];
+    return cell;
+}
+
+NSInteger arrondirSuperieur(float value){
+    float roundedup = ceil(value);
+    return roundedup;
+}
+
+float pourcentage(NSInteger value){
+    return (60*value)/100;
+}
+
+- (void) getIngredientsQue20{
+    int i,j,k;
     int cptr = 0;
+<<<<<<< HEAD:inMyKitchen/inMyKitchenAlpha/RecipeViewController.m
+    NSMutableArray* tmpToDisplay = [[NSMutableArray alloc] initWithCapacity:1];
+    for(i = 0; i < [self.content count]; i++){
+        NSArray* receipe = [[self.content objectAtIndex:i] valueForKey:@"Ingredients"];
+        NSArray* fridge = [self getUser];
+        for (j = 0; j < [receipe count]; j++){
+            cptr = 0;
+            for (k = 0; k < [fridge count]; k++){
+                NSString* receipeItem = [[receipe objectAtIndex:j] lowercaseString];
+                NSString* fridgeItem = [[fridge objectAtIndex:k] lowercaseString];
+                NSLog(@"%@ vs %@",receipeItem,fridgeItem);
+                if([receipeItem isEqualToString:fridgeItem]){
+                    cptr ++;
+                    break;
+=======
     id obj;
     NSArray* user = [self getUser];
     // for de parcours du contenu de content (le fichier plist)
@@ -115,11 +158,26 @@
                     // ajout au tableau global à générer
                         // parcours de à generer
                         // ajout au tableau
+>>>>>>> a55b674136e786d2c5b2311ee91939683e6e0081:inMyKitchen/inMyKitchenAlpha/RecettesViewController.m
                 }
             }
         }
+        
+        if(cptr >= arrondirSuperieur(pourcentage([receipe count]))){
+            [tmpToDisplay addObject:[[self.content objectAtIndex:i] valueForKey:@"Nom"]];
+        }
+        
+        NSLog(@"%@ : %d : %d",[[self.content objectAtIndex:i] valueForKey:@"Nom"],arrondirSuperieur(pourcentage([receipe count])),cptr);
     }
-    return cptr;
+    self.toDisplay = [[NSArray alloc] initWithArray:tmpToDisplay];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        RecipeDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.recipeName = [self.toDisplay objectAtIndex:indexPath.row];
+    }
 }
 
 - (NSArray *) getUser{
